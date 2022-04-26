@@ -1,5 +1,5 @@
 # 목차
-#### CH02 변수
+#### [CH02 변수](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch02-%EB%B3%80%EC%88%98-1)
 #### CH03 연산자
 #### CH04 조건문과 반복문
 #### CH05 배열
