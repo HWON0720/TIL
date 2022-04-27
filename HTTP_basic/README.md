@@ -7,7 +7,7 @@
 - TCP, UDP
 - PORT
 - DNS
-### URI와 웹 브라우저 요청 흐름
+### [URI와 웹 브라우저 요청 흐름](https://github.com/HWON0720/TIL/blob/main/HTTP_basic/README.md#uri%EC%99%80-%EC%9B%B9-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EC%9A%94%EC%B2%AD-%ED%9D%90%EB%A6%84-1)
 - URI
 - 웹 브라우저 요청 흐름
 ### HTTP 기본
@@ -86,5 +86,27 @@
 <br>
 
 ### URI와 웹 브라우저 요청 흐름
-- URI
+- URI (Uniform Resource Identifier)
+  - Uniform : 리소스 식별하는 통일된 방식
+  - Resource : 자원, URI로 식별할 수 있는 모든 것
+  - Identifier : 다른 항목과 구분하는데 필요한 정보
+  - URI는 로케이터(Locator), 이름(Name) 또는 둘 다 추가로 분류될 수 있다 (URL, URN)
+    - URL - Locator: 리소스가 있는 위치를 지정 (≒ 앞으로 URI와 같은 의미로 언급하겠음)
+    - URN - Name: 리소스에 이름을 부여
+    - 전체 문법: `scheme://[userinfo@]host[:port][/path][?query][#fragment]` (예: https://www.google.com:443/search?q=hello&hl=ko)
 - 웹 브라우저 요청 흐름
+  - 1. 웹 브라우저가 HTTP 메시지 생성
+  - 2. SOCKET 라이브러리를 통해 전달
+    - A : TCP/IP 연결(IP, PORT)
+    - B : 데이터 전달
+  - 3. TCP/IP 패킷 생성, HTTP 메시지 포함
+  - 4. 패킷 정보 인터넷으로 전송
+
+<br>
+
+### HTTP 기본
+- 모든 것이 HTTP
+- 클라이언트 서버 구조
+- Stateful, Stateless
+- 비 연결성(connectionless)
+- HTTP 메시지
