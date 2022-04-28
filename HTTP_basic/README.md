@@ -16,21 +16,21 @@
 - Stateful, Stateless
 - 비 연결성(connectionless)
 - HTTP 메시지
-### HTTP 메서드
+### [HTTP 메서드](https://github.com/HWON0720/TIL/tree/main/HTTP_basic#http-%EB%A9%94%EC%84%9C%EB%93%9C-1)
 - HTTP API를 만들어보자
 - HTTP 메서드 - GET, POST
 - HTTP 메서드 - PUT, PATCH, DELETE
 - HTTP 메서드의 속성
-### HTTP 메서드 활용
+### [HTTP 메서드 활용](https://github.com/HWON0720/TIL/tree/main/HTTP_basic#http-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%99%9C%EC%9A%A9-1)
 - 클라이언트에서 서버로 데이터 전송
 - HTTP API 설계 예시
-### HTTP 상태코드
+### [HTTP 상태코드](https://github.com/HWON0720/TIL/tree/main/HTTP_basic#http-%EC%83%81%ED%83%9C%EC%BD%94%EB%93%9C-1)
 - HTTP 상태코드 소개
 - 2xx - 성공
 - 3xx - 리다이렉션1
 - 3xx - 리다이렉션2
 - 4xx - 클라이언트 오류, 5xx - 서버 오류
-### HTTP 헤더1 - 일반 헤더
+### [HTTP 헤더1 - 일반헤더](https://github.com/HWON0720/TIL/tree/main/HTTP_basic#http-%ED%97%A4%EB%8D%941---%EC%9D%BC%EB%B0%98-%ED%97%A4%EB%8D%94-1)
 - HTTP 헤더 개요
 - 표현
 - 콘텐츠 협상
@@ -39,7 +39,7 @@
 - 특별한 정보
 - 인증
 - 쿠키
-### HTTP 헤더2 - 캐시와 조건부 요청
+### [HTTP 헤더2 - 캐시와 조건부 요청](https://github.com/HWON0720/TIL/tree/main/HTTP_basic#http-%ED%97%A4%EB%8D%942---%EC%BA%90%EC%8B%9C%EC%99%80-%EC%A1%B0%EA%B1%B4%EB%B6%80-%EC%9A%94%EC%B2%AD-1)
 - 캐시 기본 동작
 - 검증 헤더와 조건부 요청1
 - 검증 헤더와 조건부 요청2
