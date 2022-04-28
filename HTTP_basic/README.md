@@ -559,7 +559,71 @@
     - 캐시 유효 시간 초과 시, 서버를 통해 데이터를 재조회하고, 캐시를 갱신
     - 이 때, 다시 네트워크 다운로드 발생
 - 검증 헤더와 조건부 요청1
+    - 캐시 시간 초과로 서버에 재요청 시, 2가지 상황 발생
+      - 서버에서 기존 데이터를 변경
+      - 서버에서 기존 데이터를 변경 x
+      - 데이터를 처음부터 끝까지 다시 전송하는 대신, 저장해두었던 캐시를 재사용하기 위해 검증헤더와 조건부 요청 用
+      - 단, 클라이언트의 데이터와 서버의 데이터가 같다는 사실을 확인할 수 있는 방법 필요
+    - 정리
+      - 캐시 유효 시간이 초과해도, 서버의 데이터가 갱신되지 않으면 `304` Not Modified + 헤더 메타 정보만 응담 (바디 X)
+      - 클라이언트는 서버가 보낸 응답 헤더 정보로 캐시의 메타 정보를 갱신
+      - 클라이언트는 캐시에 저장되어 있는 데이터 재활용
+      - 결과적으로 네트워크 다운로드가 발생하지만 용량이 적은 헤더 정보만 다운로드
+      - 매우 실용적인 해결책
 - 검증 헤더와 조건부 요청2
+  - 검증 헤더
+    - 캐시 데이터와 서버 데이터가 같은지 검증하는 데이터
+    - Last-Modified, ETag
+  - 조건부 요청 헤더
+    - 검증 헤더로 조건에 따른 분기
+    - If-Modified-Since: Last-Modified 사용
+    - If-None-Match: ETag 사용
+    - 조건이 만족하면 `200` OK
+    - 조건이 만족하지 않으면 `304` Not Modified
+  - Last-Modified, If-Modified-Since 단점
+    - 1초 미만(0.x초) 단위로 캐시 조정 불가능
+    - 날짜 기반의 정해진 로직 사용
+    - 같은 데이터를 수정해서 날짜는 다르지만 데이터 결과가 똑같은 경우에도 전체 데이터를 다시 다운로드함
+    - 서버에서 별도의 캐시 로직을 관리하고 싶은 경우에도 완전하게 컨트롤할 수 없음
+  - ETag(Entity Tag), If-None-Match
+    - 캐시용 데이터에 임의의 고유한 버전 이름을 달아둠 (`ETag: `)
+    - 데이터가 변경되면 이 이름을 바꾸어서 변경함 (Hash를 다시 생성)
+    - 이를 통해, Last-Modified, If-Modified-Since의 단점 보완 가능 -> **캐시 제어 로직을 서버에서 완전히 관리**
+    - ETag만 서버에 보내서 같으면 유지, 다르면 다시 받는다
 - 캐시와 조건부 요청 헤더
+  - 캐시 제어 헤더
+    - Cache-Control: 캐시 제어
+      - Cache-Control: max-age
+        - 캐시 유효 시간, 초 단위
+      - Cache-Control: no-cache
+        - 데이터는 캐시해도 되지만, 항상 원(origin) 서버에 검증하고 사용
+      - Cache-Control: no-store
+        - 데이터에 민감한 정보가 있으므로 저장하면 안 됨 (메모리에서 사용하고 최대한 빨리 삭제)
+    - Pragma: 캐시 제어(하위 호환)
+      - Pragma: no-cache
+      - HTTP 1.0 하위 호환
+    - Expires: 캐시 유효 기간(하위 호환)
+      - expires: 날짜 임력
+      - 캐시 만료일을 정확한 날짜로 지정
+      - HTTP 1.0부터 사용
+      - 더 유연한 Cache-Control: max-age를 권장 (Cache-Control: max-age 사용 시, Expires는 무시)
 - 프록시 캐시
-- 캐시 무효화
+  - Cache-Control: public
+    - 응답이 public 캐시에 저장되어도 됨
+  - Cache-Control: private
+    - 응답이 해당 사용자만을 위한 것이므로, private 캐시에 저장해야 함 (기본값)
+  - Cache-Control: s-maxage
+    - 프록시 캐시에만 적용되는 max-age
+  - Age: 60 (HTTP 헤더)
+    - ORIGIN 서버에서 응답 후 프록시 캐시 내에 머문 시간(초)
+- 캐시 무효화 (확실한 캐시 무효화 응답)
+  - Cache-Control: no-cache
+    - 데이터는 캐시해도 되지만, 항상 **ORIGIN 서버에 검증**하고 사용 (이름에 주의!)
+  - Cache-Control: no-store
+    - 데이터에 민감한 정보가 있으므로 저장하면 안 됨 (메모리에서 사용하고 최대한 빨리 삭제)
+  - Cache-Control: must-revalidate
+    - 캐시 만료 후 최초 조회 시 **ORIGIN 서버에 검증**해야 함
+    - ORIGIN 서버 접근 실패 시 반드시 오류가 발생해야 함 -> `504` Gateway Timeout
+    - must-revalidate는 캐시 유효 시간이라면 캐시를 사용함
+  - Pragma: no-cache
+    - HTTP 1.0 하위 호환
