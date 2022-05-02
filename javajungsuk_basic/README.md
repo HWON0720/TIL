@@ -169,7 +169,7 @@
       - 계산을 위한 실제 값(date)을 저장
       - 문자형(char), 정수형(byte, short, int, long), 실수형(float, double)
       - 연산에 사용되는 것은 모두 기본형 변수
-  2. 참조형
+  2. 참조형(
       - 값이 저장되어 있는 주소(memory address)를 저장
       - 참조형 변수 간 연산 불가
 
