@@ -1,4 +1,4 @@
-public class Ex3_ {
+public class Ex3_12 {
     public static void main(String[] args) {
         int x = 10;
         int y = 8;
