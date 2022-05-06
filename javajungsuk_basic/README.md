@@ -1,7 +1,7 @@
 # 목차
-#### [CH02 변수](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch02-%EB%B3%80%EC%88%98-1)
-#### [CH03 연산자](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch03-%EC%97%B0%EC%82%B0%EC%9E%90-1)
-#### [CH04 조건문과 반복문](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch04-%EC%A1%B0%EA%B1%B4%EB%AC%B8%EA%B3%BC-%EB%B0%98%EB%B3%B5%EB%AC%B8-1)
+#### [CH02 변수](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch02-%EB%B3%80%EC%88%98--home)
+#### [CH03 연산자](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch03-%EC%97%B0%EC%82%B0%EC%9E%90--home)
+#### [CH04 조건문과 반복문](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch04-%EC%A1%B0%EA%B1%B4%EB%AC%B8%EA%B3%BC-%EB%B0%98%EB%B3%B5%EB%AC%B8--home)
 #### CH05 배열
 #### CH06 객체지향 프로그래밍 I
 #### CH07 객체지향 프로그래밍 II
