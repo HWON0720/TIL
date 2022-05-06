@@ -1,7 +1,7 @@
 # 목차
 #### [CH02 변수](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch02-%EB%B3%80%EC%88%98-1)
 #### [CH03 연산자](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch03-%EC%97%B0%EC%82%B0%EC%9E%90-1)
-#### CH04 조건문과 반복문
+#### [CH04 조건문과 반복문](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#ch04-%EC%A1%B0%EA%B1%B4%EB%AC%B8%EA%B3%BC-%EB%B0%98%EB%B3%B5%EB%AC%B8-1)
 #### CH05 배열
 #### CH06 객체지향 프로그래밍 I
 #### CH07 객체지향 프로그래밍 II
@@ -16,7 +16,7 @@
 #### CH16 네트워킹
 ---
 
-### CH02 변수
+### CH02 변수 | [Home](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#%EB%AA%A9%EC%B0%A8)
 #### 01. 화면에 글자 출력하기 - print()와 println() `2-1`, `2-2`
 - 화면에 글자를 출력할 때는 `System.out.print()`을 사용한다. 괄호() 안에 출력하고자 하는 내용을 넣으면 된다.
 - `System.out.print()`: 괄호 안의 내용을 출력하고 줄바꿈을 하지 않는다.
@@ -279,7 +279,7 @@
 
 <br>
 
-### CH03 연산자
+### CH03 연산자 | [Home](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#%EB%AA%A9%EC%B0%A8)
 #### 01. 연산자와 피연산자
 - 연산자
   - 연산을 수행하는 기호
@@ -456,3 +456,31 @@ else
   |i ^= 3;|i = i ^ 3;|
   |i \|= 3;|i = i \| 3;|
   |i \*= 10 + j;|i = i \* (10 + j);|
+
+<br>
+
+### CH04 조건문과 반복문 | [Home](https://github.com/HWON0720/TIL/blob/main/javajungsuk_basic/README.md#%EB%AA%A9%EC%B0%A8)
+#### 01. if문
+#### 02. 조건식의 다양한 예
+#### 03. 블럭{}
+#### 04. if-else문
+#### 05. if-else if문
+#### 06. if-else if문 예제
+#### 07. 중첩 if문
+#### 08. 중첩 if문 예제
+#### 09. switch문
+#### 10. switch문의 제약조건
+#### 11. switch문의 제약조건 예제
+#### 12. 임의의 정수만들기 Math.random()
+#### 13. for문
+#### 14. for문 예제
+#### 15. 중첩 for문
+#### 16. while문
+#### 17. while문 예제1
+#### 18. while문 예제2
+#### 19. do-while문
+#### 20. break문
+#### 21. continue문
+#### 22. break문과 continue문 예제
+#### 23. 이름 붙은 반복문
+#### 24. 이름 붙은 반복문 예제
