@@ -5,13 +5,13 @@
 // -10,000 ≤ numbers의 원소 ≤ 10,000
 // 1 ≤ numbers의 길이 ≤ 1,000
 
-// 풀이
+// 풀이 1
 class Solution {
     public int[] solution(int[] numbers) {
         int[] answer = new int[numbers.length]; // numbers 배열과 같은 길이의 result 배열을 선언
         
         for(int i = 0; i < numbers.length; i++){
-            answer[i] = numbers[i] * 2; // answer 배열에 저
+            answer[i] = numbers[i] * 2; // answer 배열에 저장
         }
         
         return answer;
